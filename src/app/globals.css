@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #0b2545;
+  --ocean: #13639b;
+  --gold: #d4a338;
+  --gold-deep: #b8862b;
+  --ink: #1e293b;
+  --mist: #f8fafc;
+  --white: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: var(--navy);
+  --color-ocean: var(--ocean);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-ink: var(--ink);
+  --color-mist: var(--mist);
+  --font-heading: var(--font-syne);
+  --font-sans: var(--font-source);
+  --font-condensed: var(--font-barlow);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-source), "Source Sans 3", sans-serif;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold) 12%,
+    var(--gold) 88%,
+    transparent
+  );
+}
+
+.navy-field {
+  color: #fff;
+  background-color: var(--navy);
+  background-image:
+    radial-gradient(
+      ellipse 80% 60% at 10% 20%,
+      rgba(19, 99, 155, 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 90% 80%,
+      rgba(212, 163, 56, 0.08),
+      transparent 50%
+    );
+}
+
+.diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.reveal {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.field {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid color-mix(in srgb, var(--navy) 18%, transparent);
+  background: var(--white);
+  padding: 0.7rem 0.9rem;
+  color: var(--ink);
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--ocean);
+  box-shadow: 0 0 0 3px rgba(19, 99, 155, 0.18);
+}
+
+.hero-reveal {
+  animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--hero-delay, 0ms);
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-copy-shadow {
+  text-shadow:
+    0 1px 2px rgba(10, 37, 64, 0.95),
+    0 6px 20px rgba(10, 37, 64, 0.7),
+    0 12px 40px rgba(10, 37, 64, 0.55);
+}
+
+@media (min-width: 768px) {
+  .hero-copy-shadow {
+    text-shadow: none;
+  }
+}
+
+.hero-arrow {
+  animation: hero-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes hero-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
