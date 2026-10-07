@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: "/services/eau", destination: "/services/hydraulique", permanent: true },
+      { source: "/services/btp", destination: "/services/genie-civil", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

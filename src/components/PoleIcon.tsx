@@ -1,18 +1,20 @@
-import { Droplets, Building2, Zap, Waypoints } from "lucide-react";
-import type { ServiceId } from "@/data/content";
+import { Compass, Droplets, Building2, Zap, Package, Handshake } from "lucide-react";
+import type { PillarId } from "@/data/pillars";
 
 const map = {
-  eau: Droplets,
-  btp: Building2,
+  etudes: Compass,
+  hydraulique: Droplets,
+  "genie-civil": Building2,
   electricite: Zap,
-  commerce: Waypoints,
+  commerce: Package,
+  prestation: Handshake,
 };
 
 export function PoleIcon({
   id,
   className = "size-7",
 }: {
-  id: ServiceId;
+  id: PillarId;
   className?: string;
 }) {
   const Icon = map[id];

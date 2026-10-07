@@ -1,6 +1,6 @@
-# SGHCB
+# SIGEB
 
-Site vitrine de la Société de Génie Hydraulique et Civil du Bénin.
+Site vitrine de la Société d'Ingénierie et de Génie du Bénin.
 
 ## Développement
 

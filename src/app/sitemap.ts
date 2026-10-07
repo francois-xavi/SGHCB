@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 import { projects, services } from "@/data/content";
+import { company } from "@/lib/company";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://sghcb.bj";
+  const base = company.siteUrl;
+  // Future editorial section: add `/blog` and `/blog/[slug]` here.
   const staticRoutes = [
     "",
     "/services",

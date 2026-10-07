@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "react";
 import { Barlow_Condensed, Source_Sans_3, Syne } from "next/font/google";
+import { BackToTop } from "@/components/BackToTop";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { MobileActionBar } from "@/components/MobileActionBar";
+import { SkipLink } from "@/components/SkipLink";
+import { ToastProvider } from "@/components/Toast";
+import { MotionProvider } from "@/components/motion/MotionProvider";
+import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { company } from "@/lib/company";
 import "./globals.css";
 
@@ -30,25 +36,28 @@ const barlow = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sghcb.bj"),
+  metadataBase: new URL(company.siteUrl),
   title: {
     default: `${company.name} — ${company.legal}`,
     template: `%s · ${company.name}`,
   },
-  description:
-    "SGHCB — Société de Génie Hydraulique et Civil du Bénin. Forage, BTP, électricité et commerce général à Cotonou et sur tout le territoire.",
+  description: `${company.name} — ${company.legal}. ${company.baseline.fr}`,
   keywords: [
-    "BTP Bénin",
+    "SIGEB",
+    "ingénierie Bénin",
+    "entreprise BTP Bénin",
     "forage Bénin",
-    "génie hydraulique Cotonou",
-    "entreprise BTP Cotonou",
-    "adduction d'eau Bénin",
-    "électricité Bénin",
-    "SGHCB",
+    "adduction d'eau potable Bénin",
+    "hydraulique Abomey-Calavi",
+    "génie civil Bénin",
+    "électricité et énergie Bénin",
+    "groupe électrogène Bénin",
+    "fournitures hydrauliques Bénin",
+    "études et contrôle de travaux",
   ],
   openGraph: {
     title: `${company.name} — ${company.legal}`,
-    description: company.tagline,
+    description: company.tagline.fr,
     locale: "fr_BJ",
     type: "website",
   },
@@ -60,19 +69,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="fr"
       className={`${syne.variable} ${source.variable} ${barlow.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-ink font-sans">
-        <a
-          href="#contenu"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[80] focus:bg-gold focus:px-4 focus:py-2 focus:text-navy"
-        >
-          Aller au contenu
-        </a>
-        <Header />
-        <main id="contenu" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppFab />
+      <body className="min-h-full flex flex-col bg-white pb-[calc(4rem+env(safe-area-inset-bottom))] text-ink font-sans md:pb-0">
+        <LanguageProvider>
+          <MotionProvider>
+            <ToastProvider>
+              <SkipLink />
+              <Header />
+              <main id="contenu" className="flex-1">
+                <ViewTransition>{children}</ViewTransition>
+              </main>
+              <Footer />
+              <BackToTop />
+              <MobileActionBar />
+            </ToastProvider>
+          </MotionProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

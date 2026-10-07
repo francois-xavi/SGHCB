@@ -54,3 +54,25 @@ export function IconRoute(props: IconProps) {
     </svg>
   );
 }
+
+export function IconEtudes(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden {...props}>
+      <path {...stroke} d="M6.2 4.4h11.6v15.2H6.2z" />
+      <path {...stroke} d="M9 8.2h6.2M9 11.4h6.2M9 14.6h3.8" />
+      <path {...stroke} d="M14.8 17.2 17.6 20" />
+      <circle {...stroke} cx="13.6" cy="16.2" r="1.7" />
+    </svg>
+  );
+}
+
+export function IconPrestation(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden {...props}>
+      <path {...stroke} d="M8.2 11.2 5.4 13.4v3.2l2.8 1.4 3.2-2.2" />
+      <path {...stroke} d="M15.8 11.2 18.6 13.4v3.2l-2.8 1.4-3.2-2.2" />
+      <path {...stroke} d="M9.4 8.2a2.4 2.4 0 1 0-0.1-4.8 2.4 2.4 0 0 0 .1 4.8Z" />
+      <path {...stroke} d="M16.7 8.2a2.4 2.4 0 1 0-.1-4.8 2.4 2.4 0 0 0 .1 4.8Z" />
+    </svg>
+  );
+}

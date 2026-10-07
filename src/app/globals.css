@@ -1,16 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0b2545;
-  --ocean: #13639b;
-  --gold: #d4a338;
-  --gold-deep: #b8862b;
-  --ink: #1e293b;
-  --mist: #f8fafc;
+  --primary: #1e6fc4;
+  --primary-dark: #0b3d7a;
+  --primary-darker: #081f42;
+  --primary-light: #3fa9e8;
+  --primary-pale: #dceefb;
+  --accent: #c9d93f;
+  --accent-dark: #a8b82f;
+  --neutral-section: #f0f4f9;
+  --neutral-border: #e2e8f0;
+  --neutral-text: #1a1a1a;
   --white: #ffffff;
+
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-darker: var(--primary-darker);
+  --color-primary-light: var(--primary-light);
+  --color-primary-pale: var(--primary-pale);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-neutral-section: var(--neutral-section);
+  --color-neutral-border: var(--neutral-border);
+  --color-neutral-text: var(--neutral-text);
+
+  --navy: var(--primary-dark);
+  --ocean: var(--primary);
+  --gold: var(--accent);
+  --gold-deep: var(--accent-dark);
+  --ink: var(--neutral-text);
+  --mist: var(--neutral-section);
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-darker: var(--primary-darker);
+  --color-primary-light: var(--primary-light);
+  --color-primary-pale: var(--primary-pale);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-neutral-section: var(--neutral-section);
+  --color-neutral-border: var(--neutral-border);
+  --color-neutral-text: var(--neutral-text);
   --color-navy: var(--navy);
   --color-ocean: var(--ocean);
   --color-gold: var(--gold);
@@ -47,8 +79,8 @@ body {
 }
 
 ::selection {
-  background: var(--gold);
-  color: var(--navy);
+  background: var(--accent);
+  color: var(--primary-darker);
 }
 
 .gold-rule {
@@ -56,24 +88,24 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    var(--gold) 12%,
-    var(--gold) 88%,
+    var(--accent) 12%,
+    var(--accent) 88%,
     transparent
   );
 }
 
 .navy-field {
   color: #fff;
-  background-color: var(--navy);
+  background-color: var(--primary-darker);
   background-image:
     radial-gradient(
       ellipse 80% 60% at 10% 20%,
-      rgba(19, 99, 155, 0.28),
+      color-mix(in srgb, var(--primary-light) 28%, transparent),
       transparent 55%
     ),
     radial-gradient(
       ellipse 50% 40% at 90% 80%,
-      rgba(212, 163, 56, 0.08),
+      color-mix(in srgb, var(--accent) 12%, transparent),
       transparent 50%
     );
 }
@@ -100,7 +132,7 @@ body {
 .field {
   width: 100%;
   min-height: 48px;
-  border: 1px solid color-mix(in srgb, var(--navy) 18%, transparent);
+  border: 1px solid var(--neutral-border);
   background: var(--white);
   padding: 0.7rem 0.9rem;
   color: var(--ink);
@@ -108,8 +140,8 @@ body {
 }
 
 .field:focus {
-  border-color: var(--ocean);
-  box-shadow: 0 0 0 3px rgba(19, 99, 155, 0.18);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent);
 }
 
 .hero-reveal {
@@ -130,9 +162,9 @@ body {
 
 .hero-copy-shadow {
   text-shadow:
-    0 1px 2px rgba(10, 37, 64, 0.95),
-    0 6px 20px rgba(10, 37, 64, 0.7),
-    0 12px 40px rgba(10, 37, 64, 0.55);
+    0 1px 2px color-mix(in srgb, var(--primary-darker) 95%, transparent),
+    0 6px 20px color-mix(in srgb, var(--primary-darker) 70%, transparent),
+    0 12px 40px color-mix(in srgb, var(--primary-darker) 55%, transparent);
 }
 
 @media (min-width: 768px) {
@@ -152,5 +184,133 @@ body {
   }
   50% {
     transform: translateY(8px);
+  }
+}
+
+/* ---- Interactions & motion (palette inchangée) ---- */
+
+.marquee {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ken-burns {
+  animation: ken-burns 9s ease-out both;
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    color-mix(in srgb, var(--accent) 10%, transparent) 50%,
+    transparent 65%
+  );
+  transform: translateX(-100%);
+  animation: sheen 7s ease-in-out infinite;
+}
+
+@keyframes sheen {
+  0%,
+  35% {
+    transform: translateX(-100%);
+  }
+  70%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.slide-progress {
+  animation: slide-progress var(--slide-duration, 5s) linear forwards;
+  transform-origin: left;
+}
+
+@keyframes slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.img-wipe {
+  animation: img-wipe 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes img-wipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Transitions de page (React <ViewTransition>) */
+::view-transition-group(.morph) {
+  animation-duration: 450ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+
+@keyframes via-blur {
+  30% {
+    filter: blur(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* Changement de langue : fondu du contenu */
+.lang-switch #contenu,
+.lang-switch footer {
+  animation: lang-fade 0.45s ease both;
+}
+
+@keyframes lang-fade {
+  from {
+    opacity: 0.2;
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
   }
 }

@@ -10,7 +10,7 @@ type Props = {
 };
 
 const styles = {
-  gold: "bg-gold text-navy hover:bg-gold-deep hover:text-white",
+  gold: "bg-gold text-primary-darker hover:bg-gold-deep",
   outline:
     "border border-white/70 text-white hover:border-gold hover:text-gold bg-transparent",
   navy: "bg-navy text-white hover:bg-ocean",
