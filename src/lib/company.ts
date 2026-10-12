@@ -29,13 +29,6 @@ export const company = {
   } satisfies L,
   mapsQuery,
   mapsLink: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`,
-  leader: {
-    name: "Gabriel Cyrille ANAGONOU",
-    title: {
-      fr: "Ingénieur Génie de l'Eau et de l'Assainissement",
-      en: "Water and Sanitation Engineer",
-    } satisfies L,
-  },
   capital: "1 000 000 FCFA",
   rccm: "RB/ABC/26 B 12290",
   ifu: "3202639403731",

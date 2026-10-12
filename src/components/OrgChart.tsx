@@ -6,9 +6,7 @@ import { EASE_OUT } from "@/components/motion/Reveal";
 
 type Props = {
   root: string;
-  leaderLabel: string;
-  leaderName: string;
-  leaderTitle: string;
+  caption: string;
   departments: string[];
   expertsLabel: string;
   experts: string;
@@ -22,9 +20,7 @@ const view = { once: true, margin: "-80px" } as const;
  */
 export function OrgChart({
   root,
-  leaderLabel,
-  leaderName,
-  leaderTitle,
+  caption,
   departments,
   expertsLabel,
   experts,
@@ -47,11 +43,10 @@ export function OrgChart({
       >
         <AnimatedIcon name="team" size={52} tone="dark" trigger="in-view" />
         <div>
-          <p className="font-condensed text-[11px] uppercase tracking-[0.2em] text-gold">
-            {root} · {leaderLabel}
+          <p className="font-heading text-xl">{root}</p>
+          <p className="mt-1 font-condensed text-[12px] uppercase tracking-[0.16em] text-gold">
+            {caption}
           </p>
-          <p className="mt-1 font-heading text-xl">{leaderName}</p>
-          <p className="text-[14px] text-white/70">{leaderTitle}</p>
         </div>
       </m.div>
 

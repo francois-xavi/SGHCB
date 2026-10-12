@@ -16,7 +16,8 @@ const fr = {
     projects: "Nos réalisations",
     about: "À propos",
     contact: "Contact",
-    quote: "Demander un devis",
+    quote: "Parlons de votre projet",
+    quoteShort: "Votre projet",
     legal: "Mentions légales",
   },
   lang: { fr: "FR", en: "EN", label: "Langue" },
@@ -33,14 +34,14 @@ const fr = {
     quickActions: "Actions rapides",
     call: "Appeler",
     email: "Email",
-    quote: "Devis",
+    quote: "Projet",
     iconsCredit: "Icônes animées : Lordicon",
     prevTestimonial: "Témoignage précédent",
     nextTestimonial: "Témoignage suivant",
   },
   hero: {
-    titleStart: "L'ingénierie et le génie",
-    titleEnd: "du Bénin",
+    titleStart: "Ingénierie sûre,",
+    titleEnd: "réalisations durables",
     seeProjects: "Voir nos réalisations →",
     discover: "Découvrir les pôles",
     proofLabel: "pôles d'expertise",
@@ -63,8 +64,8 @@ const fr = {
     processTitle: "Quatre étapes. Un seul fil.",
     testimonialsKicker: "Témoignages",
     testimonialsTitle: "Ce que disent les maîtres d'ouvrage.",
-    quoteKicker: "Devis",
-    quoteTitle: "Décrivez le projet. Nous chiffrons.",
+    quoteKicker: "Votre projet",
+    quoteTitle: "Racontez-nous votre projet.",
     quoteText:
       "Formulaire structuré, réponse sous 24–48h. Le canal prioritaire est l'email.",
   },
@@ -78,11 +79,6 @@ const fr = {
     prestationsKicker: "Prestations",
     prestationsTitle: "Ce que nous réalisons",
     related: "Nos réalisations liées",
-    quoteKicker: "Devis",
-    quoteTitle: "Demander un devis",
-    quoteText:
-      "Le service est déjà pré-sélectionné. Décrivez le projet, nous revenons vers vous sous 24–48h.",
-    ctaTitle: "Un projet ? Parlons-en.",
     benin: "Bénin",
   },
   projects: {
@@ -114,7 +110,7 @@ const fr = {
   },
   about: {
     kicker: "À propos",
-    title: "Ingénierie sûre, réalisations durables.",
+    title: "Une société d'ingénierie, ancrée au Bénin.",
     historyTitle: "Une jeune société, une équipe confirmée.",
     history: [
       "La Société d'Ingénierie et de Génie du Bénin (SIGEB), créée en 2026, est née de la volonté de jeunes ingénieurs et experts béninois de mettre leurs compétences au service du développement durable.",
@@ -141,7 +137,7 @@ const fr = {
     orgTitle: "Une organisation structurée",
     orgText:
       "La Direction générale s'appuie sur une équipe permanente de neuf responsables clés couvrant les volets stratégiques, administratifs et techniques, renforcée par un réseau d'experts externes mobilisables selon les besoins des projets.",
-    leaderLabel: "Chef de file",
+    rootCaption: "9 responsables clés · experts mobilisables",
     departmentsLabel: "Départements",
     departments: [
       "Direction générale",
@@ -180,7 +176,7 @@ const fr = {
   },
   contact: {
     kicker: "Contact",
-    title: "Un email. Un devis. Un suivi.",
+    title: "Un email. Une étude. Un suivi.",
     text: "Le canal prioritaire est l'email. Décrivez le projet, nous revenons vers vous sous 24–48h.",
     email: "Email",
     phone: "Téléphone",
@@ -194,8 +190,8 @@ const fr = {
     mapFrame: "Carte du siège SIGEB",
   },
   quotePage: {
-    kicker: "Devis",
-    title: "Décrivez l'ouvrage. Nous chiffrons.",
+    kicker: "Votre projet",
+    title: "Présentez votre projet, nous l'étudions avec vous.",
     text: "Réponse sous 24–48h. Un chargé d'affaires vous répond par email.",
     asideKicker: "Engagement",
     asideTitle: "Réponse sous 24–48h",
@@ -217,7 +213,7 @@ const fr = {
     name: "Nom et prénom",
     phone: "Téléphone (optionnel)",
     email: "Email",
-    submit: "Envoyer par email",
+    submit: "Envoyer ma demande",
     sentTitle: "Demande préparée",
     sentText: "Votre client mail s'est ouvert avec le message.",
     writeTo: "Écrire à",
@@ -238,8 +234,8 @@ const fr = {
     recap: "Récapitulatif",
   },
   cta: {
-    title: "Un projet ? Parlons-en.",
-    text: "Devis sous 24–48h. Un email suffit pour démarrer.",
+    title: "Un projet en tête ? Échangeons.",
+    text: "Réponse sous 24–48h. Un email suffit pour démarrer.",
   },
   footer: {
     text: "Six pôles, un interlocuteur : études, hydraulique, génie civil, électricité et énergie, technologies et commerce, formation et expertise.",
@@ -266,7 +262,7 @@ const fr = {
   notFound: {
     title: "Page introuvable",
     text: "Cette adresse n'existe pas. Revenez à l'accueil ou demandez un devis.",
-    quote: "Devis",
+    quote: "Parler de mon projet",
   },
 };
 
@@ -280,7 +276,8 @@ const en: Messages = {
     projects: "Our projects",
     about: "About",
     contact: "Contact",
-    quote: "Request a quote",
+    quote: "Let's talk about your project",
+    quoteShort: "Your project",
     legal: "Legal notice",
   },
   lang: { fr: "FR", en: "EN", label: "Language" },
@@ -297,14 +294,14 @@ const en: Messages = {
     quickActions: "Quick actions",
     call: "Call",
     email: "Email",
-    quote: "Quote",
+    quote: "Project",
     iconsCredit: "Animated icons: Lordicon",
     prevTestimonial: "Previous testimonial",
     nextTestimonial: "Next testimonial",
   },
   hero: {
-    titleStart: "Engineering and works",
-    titleEnd: "for Benin",
+    titleStart: "Sound engineering,",
+    titleEnd: "lasting results",
     seeProjects: "See our projects →",
     discover: "Explore our divisions",
     proofLabel: "areas of expertise",
@@ -327,8 +324,8 @@ const en: Messages = {
     processTitle: "Four steps. One thread.",
     testimonialsKicker: "Testimonials",
     testimonialsTitle: "What project owners say.",
-    quoteKicker: "Quote",
-    quoteTitle: "Describe the project. We price it.",
+    quoteKicker: "Your project",
+    quoteTitle: "Tell us about your project.",
     quoteText:
       "Structured form, reply within 24–48h. Email is our preferred channel.",
   },
@@ -342,11 +339,6 @@ const en: Messages = {
     prestationsKicker: "Services",
     prestationsTitle: "What we deliver",
     related: "Related projects",
-    quoteKicker: "Quote",
-    quoteTitle: "Request a quote",
-    quoteText:
-      "The service is already selected. Describe the project and we will get back to you within 24–48h.",
-    ctaTitle: "A project? Let's talk.",
     benin: "Benin",
   },
   projects: {
@@ -378,7 +370,7 @@ const en: Messages = {
   },
   about: {
     kicker: "About",
-    title: "Sound engineering, lasting results.",
+    title: "An engineering company rooted in Benin.",
     historyTitle: "A young company, a seasoned team.",
     history: [
       "Société d'Ingénierie et de Génie du Bénin (SIGEB) was founded in 2026 by young Beninese engineers and experts determined to put their skills to work for sustainable development.",
@@ -405,7 +397,7 @@ const en: Messages = {
     orgTitle: "A structured organisation",
     orgText:
       "Senior management relies on a permanent team of nine key managers covering strategic, administrative and technical matters, backed by a network of external experts brought in as projects require.",
-    leaderLabel: "Team lead",
+    rootCaption: "9 key managers · on-call experts",
     departmentsLabel: "Departments",
     departments: [
       "General management",
@@ -444,7 +436,7 @@ const en: Messages = {
   },
   contact: {
     kicker: "Contact",
-    title: "One email. One quote. One follow-up.",
+    title: "One email. One study. One follow-up.",
     text: "Email is our preferred channel. Describe the project and we will get back to you within 24–48h.",
     email: "Email",
     phone: "Phone",
@@ -458,8 +450,8 @@ const en: Messages = {
     mapFrame: "Map of SIGEB head office",
   },
   quotePage: {
-    kicker: "Quote",
-    title: "Describe the works. We price them.",
+    kicker: "Your project",
+    title: "Present your project, we study it with you.",
     text: "Reply within 24–48h. A project manager will answer you by email.",
     asideKicker: "Commitment",
     asideTitle: "Reply within 24–48h",
@@ -481,7 +473,7 @@ const en: Messages = {
     name: "Full name",
     phone: "Phone (optional)",
     email: "Email",
-    submit: "Send by email",
+    submit: "Send my request",
     sentTitle: "Request ready",
     sentText: "Your email app has opened with the message.",
     writeTo: "Write to",
@@ -502,8 +494,8 @@ const en: Messages = {
     recap: "Summary",
   },
   cta: {
-    title: "A project? Let's talk.",
-    text: "Quote within 24–48h. One email is enough to get started.",
+    title: "A project in mind? Let's talk.",
+    text: "Reply within 24–48h. One email is enough to get started.",
   },
   footer: {
     text: "Six divisions, one point of contact: studies, water, civil engineering, electrical and energy, technology and trade, training and expertise.",
@@ -529,7 +521,7 @@ const en: Messages = {
   notFound: {
     title: "Page not found",
     text: "This address does not exist. Go back to the home page or request a quote.",
-    quote: "Quote",
+    quote: "Discuss my project",
   },
 };
 

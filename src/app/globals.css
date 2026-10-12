@@ -110,6 +110,23 @@ body {
     );
 }
 
+/* Variante plus claire (footer) : bleu marine de la marque au lieu du bleu nuit */
+.navy-field-soft {
+  color: #fff;
+  background-color: var(--primary-dark);
+  background-image:
+    radial-gradient(
+      ellipse 80% 60% at 10% 20%,
+      color-mix(in srgb, var(--primary-light) 32%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 90% 80%,
+      color-mix(in srgb, var(--accent) 14%, transparent),
+      transparent 50%
+    );
+}
+
 .diamond {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }

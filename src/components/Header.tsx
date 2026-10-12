@@ -29,17 +29,13 @@ export function Header() {
   const open = menuFor === pathname;
   const servicesOpen = servicesFor === pathname;
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const blockServicesOpen = useRef(false);
 
   const { scrollY, scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 200, damping: 30 });
 
   useMotionValueEvent(scrollY, "change", (y) => {
-    const previous = scrollY.getPrevious() ?? 0;
     setScrolled(y > 8);
-    setHidden(y > 160 && y > previous + 2);
-    if (y < previous - 2) setHidden(false);
   });
 
   useEffect(() => {
@@ -67,11 +63,7 @@ export function Header() {
 
   return (
     <>
-      <m.header
-        className="sticky top-0 z-50"
-        animate={{ y: hidden && !open && !servicesOpen ? "-100%" : "0%" }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      >
+      <header className="sticky top-0 z-50">
         <div className="hidden bg-primary-darker text-white lg:block">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-[13px]">
             <p className="font-condensed uppercase tracking-[0.18em] text-white/80">
@@ -228,7 +220,8 @@ export function Header() {
                 href="/devis"
                 className="inline-flex min-h-11 items-center bg-gold px-3 font-condensed text-[11px] font-semibold uppercase tracking-[0.14em] text-primary-darker transition-colors hover:bg-gold-deep sm:px-5 sm:text-[13px]"
               >
-                {t.nav.quote}
+                <span className="sm:hidden">{t.nav.quoteShort}</span>
+                <span className="hidden sm:inline">{t.nav.quote}</span>
               </Link>
               <button
                 type="button"
@@ -258,7 +251,7 @@ export function Header() {
             style={{ scaleX: progress }}
           />
         </div>
-      </m.header>
+      </header>
 
       <AnimatePresence>
         {open ? (

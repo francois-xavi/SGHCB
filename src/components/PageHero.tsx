@@ -37,12 +37,12 @@ export function PageHero({ kicker, title, text, crumbs }: Props) {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20">
         {crumbs ? (
           <m.nav
-            className="mb-6 font-condensed text-[12px] uppercase tracking-[0.16em] text-white/60"
+            className="mb-6 font-condensed text-[14px] font-semibold uppercase tracking-[0.14em] text-white/75 sm:text-[15px]"
             {...rise(0)}
           >
             {crumbs.map((c, i) => (
               <span key={c.href}>
-                {i > 0 ? <span className="mx-2 text-gold">/</span> : null}
+                {i > 0 ? <span className="mx-2.5 text-gold">/</span> : null}
                 <Link href={c.href} className="hover:text-gold">
                   {c.label}
                 </Link>

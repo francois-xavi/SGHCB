@@ -125,9 +125,7 @@ export function AboutView() {
           </Reveal>
           <OrgChart
             root={a.departments[0]}
-            leaderLabel={a.leaderLabel}
-            leaderName={company.leader.name}
-            leaderTitle={tr(company.leader.title)}
+            caption={a.rootCaption}
             departments={a.departments.slice(1)}
             expertsLabel={a.expertsLabel}
             experts={a.experts}

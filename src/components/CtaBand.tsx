@@ -9,9 +9,11 @@ import { company, emailLink } from "@/lib/company";
 export function CtaBand({
   title,
   text,
+  button,
 }: {
   title?: string;
   text?: string;
+  button?: string;
 }) {
   const { t } = useLanguage();
   return (
@@ -29,7 +31,7 @@ export function CtaBand({
         <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
           <Magnetic className="w-full sm:w-auto">
             <GoldButton href="/devis" className="w-full">
-              {t.nav.quote}
+              {button ?? t.nav.quote}
             </GoldButton>
           </Magnetic>
           <GoldButton href={emailLink()} variant="outline">

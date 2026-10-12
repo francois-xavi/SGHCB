@@ -11,6 +11,8 @@ export type Service = {
   headline: L;
   intro: L;
   prestations: { title: L; text: L }[];
+  /** Appel à l'action propre au pôle (bloc « Votre projet » et bandeau final). */
+  cta: { kicker: L; title: L; text: L; button: L };
   /** Référencement local : en français uniquement. */
   seo: { title: string; description: string };
   image: string;
@@ -18,7 +20,7 @@ export type Service = {
 
 const details: Record<
   ServiceId,
-  Pick<Service, "headline" | "intro" | "prestations" | "seo" | "image">
+  Pick<Service, "headline" | "intro" | "prestations" | "cta" | "seo" | "image">
 > = {
   etudes: {
     headline: {
@@ -59,6 +61,24 @@ const details: Record<
         },
       },
     ],
+    cta: {
+      kicker: {
+        fr: "Étude de faisabilité",
+        en: "Feasibility study",
+      },
+      title: {
+        fr: "Un ouvrage à concevoir ? Étudions sa faisabilité ensemble.",
+        en: "A structure to design? Let's assess its feasibility together.",
+      },
+      text: {
+        fr: "Partagez vos plans, votre terrain ou simplement votre idée : nos ingénieurs analysent les contraintes et vous proposent une démarche d'étude adaptée.",
+        en: "Share your drawings, your site or simply your idea: our engineers review the constraints and suggest a suitable study approach.",
+      },
+      button: {
+        fr: "Soumettre mon projet d'étude",
+        en: "Submit my study project",
+      },
+    },
     seo: {
       title: "Études, conception et contrôle au Bénin",
       description:
@@ -119,6 +139,24 @@ const details: Record<
         },
       },
     ],
+    cta: {
+      kicker: {
+        fr: "Votre projet d'eau",
+        en: "Your water project",
+      },
+      title: {
+        fr: "Un besoin en eau ? Trouvons la bonne solution pour votre site.",
+        en: "Need water? Let's find the right solution for your site.",
+      },
+      text: {
+        fr: "Forage, réseau, pompage ou traitement : décrivez votre site et vos usages, nous vous orientons vers la solution la plus durable.",
+        en: "Borehole, network, pumping or treatment: describe your site and needs, and we will point you to the most sustainable solution.",
+      },
+      button: {
+        fr: "Parler de mon projet d'eau",
+        en: "Discuss my water project",
+      },
+    },
     seo: {
       title: "Forage, eau potable et assainissement au Bénin",
       description:
@@ -165,12 +203,30 @@ const details: Record<
         },
       },
     ],
+    cta: {
+      kicker: {
+        fr: "Votre chantier",
+        en: "Your worksite",
+      },
+      title: {
+        fr: "Un chantier en vue ? Construisons-le avec méthode.",
+        en: "A worksite ahead? Let's build it methodically.",
+      },
+      text: {
+        fr: "Bâtiment, voirie, ouvrage ou structure métallique : présentez-nous votre programme, nous organisons les études, le pilotage et la réalisation.",
+        en: "Building, road, civil works or steel structure: present your programme and we will organise the studies, management and delivery.",
+      },
+      button: {
+        fr: "Présenter mon chantier",
+        en: "Present my worksite",
+      },
+    },
     seo: {
       title: "BTP et génie civil au Bénin",
       description:
         "Entreprise BTP au Bénin : maîtrise d'œuvre, bâtiments, routes et construction métallique. SIGEB, Abomey-Calavi.",
     },
-    image: "/images/hydraulique/reseau-aep/regard-vanne-02.jpg",
+    image: "/images/genie-civil/regard-vanne-02.jpg",
   },
   electricite: {
     headline: {
@@ -211,6 +267,24 @@ const details: Record<
         },
       },
     ],
+    cta: {
+      kicker: {
+        fr: "Votre installation",
+        en: "Your installation",
+      },
+      title: {
+        fr: "Besoin d'une énergie fiable ? Dimensionnons votre installation.",
+        en: "Need reliable power? Let's size your installation.",
+      },
+      text: {
+        fr: "Réseau électrique, coffrets de pompage, groupe électrogène ou solaire : décrivez vos équipements, nous étudions la solution la plus sûre.",
+        en: "Electrical network, pump control panels, generator or solar: describe your equipment and we will design the safest solution.",
+      },
+      button: {
+        fr: "Décrire mon installation",
+        en: "Describe my installation",
+      },
+    },
     seo: {
       title: "Électricité, électromécanique et énergie au Bénin",
       description:
@@ -264,6 +338,24 @@ const details: Record<
         },
       },
     ],
+    cta: {
+      kicker: {
+        fr: "Vos équipements",
+        en: "Your equipment",
+      },
+      title: {
+        fr: "Un besoin en équipements ? Recevez une offre adaptée.",
+        en: "Need equipment? Get a tailored offer.",
+      },
+      text: {
+        fr: "Pompes, pièces hydrauliques, matériel électrique ou informatique : précisez quantités et délais, nous vous proposons une offre d'approvisionnement sur mesure.",
+        en: "Pumps, water fittings, electrical or IT equipment: tell us quantities and deadlines, and we will send a tailored supply offer.",
+      },
+      button: {
+        fr: "Préciser mon besoin",
+        en: "Specify my needs",
+      },
+    },
     seo: {
       title: "Fournitures, informatique et import-export au Bénin",
       description:
@@ -310,6 +402,24 @@ const details: Record<
         },
       },
     ],
+    cta: {
+      kicker: {
+        fr: "Formation & conseil",
+        en: "Training & advice",
+      },
+      title: {
+        fr: "Faire monter vos équipes en compétence ? Bâtissons le programme.",
+        en: "Want to upskill your teams? Let's build the programme.",
+      },
+      text: {
+        fr: "Audit, accompagnement ou formation pratique : parlez-nous de vos équipes et de vos objectifs, nous concevons une intervention sur mesure.",
+        en: "Audit, support or hands-on training: tell us about your teams and goals, and we will design a tailored programme.",
+      },
+      button: {
+        fr: "Échanger avec un expert",
+        en: "Talk to an expert",
+      },
+    },
     seo: {
       title: "Formation et expertise technique au Bénin",
       description:
@@ -426,25 +536,22 @@ export const projects: Project[] = [
   {
     slug: "stations-pompage-forages",
     title: {
-      fr: "Stations de pompage et équipements de forage",
-      en: "Pumping stations and borehole equipment",
+      fr: "Équipement de têtes de forage",
+      en: "Borehole head equipment",
     },
     category: "hydraulique",
     excerpt: {
-      fr: "Pompes immergées, têtes de forage et aménagement des stations.",
-      en: "Submersible pumps, borehole heads and station layout.",
+      fr: "Têtes de forage en fonte, ventouses et aménagement des stations.",
+      en: "Ductile iron borehole heads, air valves and station layout.",
     },
     description: {
-      fr: "Fourniture et installation de pompes immergées Grundfos et équipement des têtes de forage : colonnes, coudes et tés en fonte, ventouses et clapets. Les stations sont aménagées et clôturées pour faciliter l'exploitation et la maintenance.",
-      en: "Supply and installation of Grundfos submersible pumps and fitting-out of borehole heads: ductile iron risers, bends and tees, air valves and check valves. Stations are laid out and fenced to make operation and maintenance easier.",
+      fr: "Équipement des têtes de forage : colonnes, coudes et tés en fonte, ventouses et clapets, raccordés aux pompes immergées. Les stations sont aménagées et clôturées pour faciliter l'exploitation et la maintenance.",
+      en: "Fitting-out of borehole heads: ductile iron risers, bends and tees, air valves and check valves, connected to the submersible pumps. Stations are laid out and fenced to make operation and maintenance easier.",
     },
     image: img("hydraulique/pompage/tete-forage-station"),
     gallery: [
       img("hydraulique/pompage/tete-forage-station"),
       img("hydraulique/pompage/tete-forage-ventouse"),
-      img("hydraulique/pompage/pompe-immergee-grundfos-caisse"),
-      img("hydraulique/pompage/pompe-immergee-emballage"),
-      img("hydraulique/pompage/pompe-immergee-livraison"),
     ],
   },
   {
@@ -472,27 +579,46 @@ export const projects: Project[] = [
   {
     slug: "reseau-eau-potable-regards-branchements",
     title: {
-      fr: "Réseau d'eau potable : regards, vannes et branchements",
-      en: "Drinking water network: chambers, valves and connections",
+      fr: "Réseau d'eau potable : pose et branchements",
+      en: "Drinking water network: pipe laying and connections",
     },
     category: "hydraulique",
     excerpt: {
-      fr: "Pose de canalisations, chambres de vannes maçonnées et branchements avec compteur.",
-      en: "Pipe laying, masonry valve chambers and metered connections.",
+      fr: "Pose de canalisations et de raccords en fonte, branchements avec compteur.",
+      en: "Laying of pipes and ductile iron fittings, metered connections.",
     },
     description: {
-      fr: "Pose de canalisations et de raccords en fonte en tranchée, construction de regards maçonnés pour vannes et réducteurs de pression, et réalisation de branchements particuliers avec compteur.",
-      en: "Laying of pipes and ductile iron fittings in trenches, construction of masonry chambers for valves and pressure reducers, and installation of metered household connections.",
+      fr: "Pose de canalisations et de raccords en fonte ductile en tranchée, puis réalisation de branchements particuliers équipés de compteurs et de robinets d'arrêt.",
+      en: "Laying of pipes and ductile iron fittings in trenches, followed by household connections fitted with meters and stop valves.",
     },
-    image: img("hydraulique/reseau-aep/regard-vanne-02"),
+    image: img("hydraulique/reseau-aep/raccord-fonte-tranchee-01"),
     gallery: [
-      img("hydraulique/reseau-aep/regard-vanne-02"),
-      img("hydraulique/reseau-aep/regard-reducteur-pression"),
-      img("hydraulique/reseau-aep/regard-vanne-01"),
-      img("hydraulique/reseau-aep/regard-vanne-03"),
       img("hydraulique/reseau-aep/raccord-fonte-tranchee-01"),
       img("hydraulique/reseau-aep/raccord-fonte-tranchee-02"),
       img("hydraulique/reseau-aep/branchement-compteur"),
+    ],
+  },
+  {
+    slug: "regards-chambres-de-vannes",
+    title: {
+      fr: "Regards et chambres de vannes maçonnés",
+      en: "Masonry valve and inspection chambers",
+    },
+    category: "genie-civil",
+    excerpt: {
+      fr: "Ouvrages maçonnés et béton pour abriter vannes et réducteurs de pression.",
+      en: "Masonry and concrete chambers housing valves and pressure reducers.",
+    },
+    description: {
+      fr: "Construction de regards et de chambres de vannes : maçonnerie en blocs, enduits, cuves béton avec échelons d'accès, pour protéger les vannes et réducteurs de pression du réseau et faciliter leur entretien.",
+      en: "Construction of inspection and valve chambers: block masonry, rendering and concrete pits with access rungs, protecting the network's valves and pressure reducers and making maintenance easier.",
+    },
+    image: img("genie-civil/regard-vanne-02"),
+    gallery: [
+      img("genie-civil/regard-vanne-02"),
+      img("genie-civil/regard-reducteur-pression"),
+      img("genie-civil/regard-vanne-01"),
+      img("genie-civil/regard-vanne-03"),
     ],
   },
   {
@@ -524,21 +650,24 @@ export const projects: Project[] = [
   {
     slug: "fourniture-pieces-fonte-ductile",
     title: {
-      fr: "Fourniture de pièces hydrauliques en fonte ductile",
-      en: "Supply of ductile iron water fittings",
+      fr: "Fourniture de pompes et de pièces hydrauliques",
+      en: "Supply of pumps and water fittings",
     },
     category: "commerce",
     excerpt: {
-      fr: "Tés, brides, vannes, colliers de prise et bouches à clé pour réseaux d'eau.",
-      en: "Tees, flanges, valves, tapping saddles and valve boxes for water networks.",
+      fr: "Pompes immergées, tés, brides, vannes et accessoires pour réseaux d'eau.",
+      en: "Submersible pumps, tees, flanges, valves and accessories for water networks.",
     },
     description: {
-      fr: "Approvisionnement de chantiers d'adduction d'eau en pièces de fontainerie : tés et brides en fonte ductile, vannes à opercule, colliers de prise en charge, joints, bouches à clé, tuyaux et raccords PVC.",
-      en: "Supply of water supply worksites with fittings: ductile iron tees and flanges, gate valves, tapping saddles, gaskets, valve boxes, PVC pipes and fittings.",
+      fr: "Approvisionnement de chantiers d'adduction d'eau : pompes immergées Grundfos livrées en caisse, pièces de fontainerie en fonte ductile (tés, brides, manchettes), vannes à opercule, colliers de prise en charge, joints, bouches à clé, tuyaux et raccords PVC.",
+      en: "Supply of water supply worksites: Grundfos submersible pumps delivered in crates, ductile iron fittings (tees, flanges, spools), gate valves, tapping saddles, gaskets, valve boxes, PVC pipes and fittings.",
     },
     image: img("commerce/fournitures/brides-et-raccords"),
     gallery: [
       img("commerce/fournitures/brides-et-raccords"),
+      img("commerce/fournitures/pompe-immergee-grundfos-caisse"),
+      img("commerce/fournitures/pompe-immergee-emballage"),
+      img("commerce/fournitures/pompe-immergee-livraison"),
       img("commerce/fournitures/stock-pieces-hydrauliques"),
       img("commerce/fournitures/vannes-opercule"),
       img("commerce/fournitures/pieces-fonte-assortiment"),

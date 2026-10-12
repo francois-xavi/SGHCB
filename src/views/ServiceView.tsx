@@ -145,18 +145,18 @@ export function ServiceView({ slug }: { slug: string }) {
       <section className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2">
         <Reveal>
           <p className="font-condensed text-[12px] uppercase tracking-[0.28em] text-ocean">
-            {t.services.quoteKicker}
+            {tr(service.cta.kicker)}
           </p>
           <h2 className="mt-3 font-heading text-3xl text-navy sm:text-4xl">
-            {t.services.quoteTitle} — {label}
+            {tr(service.cta.title)}
           </h2>
-          <p className="mt-4 text-ink/75">{t.services.quoteText}</p>
+          <p className="mt-4 text-ink/75">{tr(service.cta.text)}</p>
         </Reveal>
         <Reveal delay={0.15} className="border border-neutral-border bg-mist p-6 sm:p-8">
-          <QuoteWizard defaultService={service.id} />
+          <QuoteWizard defaultService={service.id} submitLabel={tr(service.cta.button)} />
         </Reveal>
       </section>
-      <CtaBand title={t.services.ctaTitle} />
+      <CtaBand button={tr(service.cta.button)} />
     </>
   );
 }

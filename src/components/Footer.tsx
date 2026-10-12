@@ -11,7 +11,7 @@ import { company, emailLink } from "@/lib/company";
 export function Footer() {
   const { t, tr } = useLanguage();
   return (
-    <footer className="navy-field text-white">
+    <footer className="navy-field-soft text-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-5">
@@ -108,7 +108,7 @@ export function Footer() {
         </div>
 
         <div className="gold-rule mt-12" />
-        <div className="mt-6 flex flex-col gap-3 text-[13px] text-white/55 sm:flex-row sm:justify-between">
+        <div className="mt-6 flex flex-col gap-3 text-[13px] text-white/70 sm:flex-row sm:justify-between">
           <p>© 2026 {company.name}. {t.footer.rights}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link href="/mentions-legales" className="hover:text-gold">

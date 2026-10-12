@@ -15,6 +15,8 @@ import { pillarLordicon } from "@/lib/lordicons";
 type Props = {
   defaultService?: ServiceId | "";
   compact?: boolean;
+  /** Libellé du bouton d'envoi (personnalisé par pôle). */
+  submitLabel?: string;
 };
 
 type Status = "form" | "sent" | "mailto" | "error";
@@ -48,7 +50,7 @@ function mailtoBody(v: QuoteInput) {
     .join("\n");
 }
 
-export function QuoteWizard({ defaultService = "", compact = false }: Props) {
+export function QuoteWizard({ defaultService = "", compact = false, submitLabel }: Props) {
   const { t, tr } = useLanguage();
   const f = t.form;
   const uid = useId();
@@ -379,7 +381,7 @@ export function QuoteWizard({ defaultService = "", compact = false }: Props) {
             </>
           ) : (
             <>
-              {step < 2 ? f.next : f.submit}
+              {step < 2 ? f.next : (submitLabel ?? f.submit)}
               <ArrowRight
                 className="size-4 transition-transform duration-300 group-hover:translate-x-1"
                 aria-hidden
