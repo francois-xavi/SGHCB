@@ -11,6 +11,7 @@ type LogoMarkProps = {
   /** `dark` = baseline lisible sur fond marine (footer). */
   tone?: "light" | "dark";
   className?: string;
+  onComplete?: () => void;
 };
 
 const pop: Variants = {
@@ -56,6 +57,7 @@ export function LogoMark({
   play = "mount",
   tone = "light",
   className,
+  onComplete,
 }: LogoMarkProps) {
   const uid = useId().replace(/:/g, "");
   const full = variant === "full";
@@ -244,10 +246,15 @@ export function LogoMark({
         stroke={`url(#${uid}-arc)`}
         strokeWidth="4"
         strokeLinecap="round"
+        onAnimationComplete={!full ? onComplete : undefined}
       />
 
       {full ? (
-        <m.g variants={fade} fill={tone === "dark" ? "#ffffff" : "#0B3D7A"}>
+        <m.g
+          variants={fade}
+          fill={tone === "dark" ? "#ffffff" : "#0B3D7A"}
+          onAnimationComplete={onComplete}
+        >
           <text
             x="240"
             y="222"

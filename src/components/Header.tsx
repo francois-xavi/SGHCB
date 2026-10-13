@@ -12,7 +12,7 @@ import {
 } from "motion/react";
 import { Menu, X, ChevronDown, Mail, Phone } from "lucide-react";
 import { AnimatedIcon } from "@/components/AnimatedIcon";
-import { LogoMark } from "@/components/LogoMark";
+import { HeaderLogo } from "@/components/HeaderLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { PoleIcon } from "@/components/PoleIcon";
 import { services } from "@/data/content";
@@ -100,11 +100,7 @@ export function Header() {
               className="group relative z-10 shrink-0"
               aria-label={`${company.name}, ${t.nav.home}`}
             >
-              <LogoMark
-                variant="compact"
-                play="mount"
-                className="h-10 w-auto max-h-10 origin-left transition-transform duration-300 ease-out group-hover:scale-[1.03] sm:h-11 sm:max-h-11 lg:h-12 lg:max-h-12"
-              />
+              <HeaderLogo />
             </Link>
 
             <nav className="hidden items-center gap-1 xl:flex" aria-label="Principal">

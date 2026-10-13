@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { LogoMark } from "@/components/LogoMark";
+import { Reveal } from "@/components/motion/Reveal";
 import { services } from "@/data/content";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { company, emailLink } from "@/lib/company";
@@ -15,11 +16,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-5">
-            <LogoMark
-              variant="full"
-              play="inView"
-              className="h-20 w-auto max-w-[260px] origin-left sm:h-24 sm:max-w-[300px]"
-            />
+            <Reveal y={0}>
+              <Image
+                src="/logo_footer.png"
+                alt={`${company.name} — ${company.legal}`}
+                width={360}
+                height={140}
+                className="h-20 w-auto max-w-[260px] object-contain object-left sm:h-24 sm:max-w-[300px]"
+              />
+            </Reveal>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-ink/70">
               {company.legal}. {t.footer.text}
             </p>
