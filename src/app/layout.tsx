@@ -30,7 +30,7 @@ const source = Source_Sans_3({
 const barlow = Barlow_Condensed({
   variable: "--font-barlow",
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["600", "800"],
   display: "swap",
   preload: false,
 });

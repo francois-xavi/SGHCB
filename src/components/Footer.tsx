@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { LogoMark } from "@/components/LogoMark";
 import { services } from "@/data/content";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { company, emailLink } from "@/lib/company";
@@ -15,12 +15,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-5">
-            <Image
-              src="/logo_footer.png"
-              alt={`${company.name} — ${company.legal}`}
-              width={360}
-              height={140}
-              className="h-16 w-auto max-w-[220px] object-contain object-left sm:h-[4.5rem] sm:max-w-[260px]"
+            <LogoMark
+              variant="full"
+              play="inView"
+              tone="dark"
+              className="h-20 w-auto max-w-[260px] origin-left sm:h-24 sm:max-w-[300px]"
             />
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/75">
               {company.legal}. {t.footer.text}

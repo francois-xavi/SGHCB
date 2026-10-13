@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -13,6 +12,7 @@ import {
 } from "motion/react";
 import { Menu, X, ChevronDown, Mail, Phone } from "lucide-react";
 import { AnimatedIcon } from "@/components/AnimatedIcon";
+import { LogoMark } from "@/components/LogoMark";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { PoleIcon } from "@/components/PoleIcon";
 import { services } from "@/data/content";
@@ -97,16 +97,13 @@ export function Header() {
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
             <Link
               href="/"
-              className="relative z-10 shrink-0"
+              className="group relative z-10 shrink-0"
               aria-label={`${company.name}, ${t.nav.home}`}
             >
-              <Image
-                src="/logo.png"
-                alt={`${company.name} — ${company.legal}`}
-                width={280}
-                height={96}
-                className="h-10 w-auto max-h-10 object-contain object-left sm:h-11 sm:max-h-11 lg:h-12 lg:max-h-12"
-                priority
+              <LogoMark
+                variant="compact"
+                play="mount"
+                className="h-10 w-auto max-h-10 origin-left transition-transform duration-300 ease-out group-hover:scale-[1.03] sm:h-11 sm:max-h-11 lg:h-12 lg:max-h-12"
               />
             </Link>
 
