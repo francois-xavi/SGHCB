@@ -11,48 +11,47 @@ import { company, emailLink } from "@/lib/company";
 export function Footer() {
   const { t, tr } = useLanguage();
   return (
-    <footer className="navy-field-soft text-white">
+    <footer className="border-t border-neutral-border bg-white text-ink">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-5">
             <LogoMark
               variant="full"
               play="inView"
-              tone="dark"
               className="h-20 w-auto max-w-[260px] origin-left sm:h-24 sm:max-w-[300px]"
             />
-            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/75">
+            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-ink/70">
               {company.legal}. {t.footer.text}
             </p>
           </div>
 
           <div className="lg:col-span-2">
-            <p className="font-condensed text-[12px] font-semibold uppercase tracking-[0.2em] text-gold">
+            <p className="font-condensed text-[12px] font-semibold uppercase tracking-[0.2em] text-gold-deep">
               {t.footer.navigation}
             </p>
-            <ul className="mt-4 space-y-2 text-[15px]">
+            <ul className="mt-4 space-y-2 text-[15px] text-navy">
               <li>
-                <Link href="/" className="hover:text-gold">
+                <Link href="/" className="hover:text-ocean">
                   {t.nav.home}
                 </Link>
               </li>
               <li>
-                <Link href="/realisations" className="hover:text-gold">
+                <Link href="/realisations" className="hover:text-ocean">
                   {t.nav.projects}
                 </Link>
               </li>
               <li>
-                <Link href="/a-propos" className="hover:text-gold">
+                <Link href="/a-propos" className="hover:text-ocean">
                   {t.nav.about}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-gold">
+                <Link href="/contact" className="hover:text-ocean">
                   {t.nav.contact}
                 </Link>
               </li>
               <li>
-                <Link href="/devis" className="hover:text-gold">
+                <Link href="/devis" className="hover:text-ocean">
                   {t.nav.quote}
                 </Link>
               </li>
@@ -60,13 +59,13 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <p className="font-condensed text-[12px] font-semibold uppercase tracking-[0.2em] text-gold">
+            <p className="font-condensed text-[12px] font-semibold uppercase tracking-[0.2em] text-gold-deep">
               {t.footer.poles}
             </p>
-            <ul className="mt-4 space-y-2 text-[15px]">
+            <ul className="mt-4 space-y-2 text-[15px] text-navy">
               {services.map((s) => (
                 <li key={s.id}>
-                  <Link href={`/services/${s.slug}`} className="hover:text-gold">
+                  <Link href={`/services/${s.slug}`} className="hover:text-ocean">
                     {tr(s.label)}
                   </Link>
                 </li>
@@ -75,18 +74,18 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <p className="font-condensed text-[12px] font-semibold uppercase tracking-[0.2em] text-gold">
+            <p className="font-condensed text-[12px] font-semibold uppercase tracking-[0.2em] text-gold-deep">
               {t.footer.contact}
             </p>
-            <ul className="mt-4 space-y-3 text-[15px] text-white/80">
+            <ul className="mt-4 space-y-3 text-[15px] text-ink/75">
               <li>{tr(company.address)}</li>
               <li>
-                <a href={emailLink()} className="hover:text-gold">
+                <a href={emailLink()} className="text-navy hover:text-ocean">
                   {company.email}
                 </a>
               </li>
               <li>
-                <a href={company.phoneHref} className="hover:text-gold">
+                <a href={company.phoneHref} className="text-navy hover:text-ocean">
                   {company.phone}
                 </a>{" "}
                 ({t.callsOnly})
@@ -101,23 +100,23 @@ export function Footer() {
               {t.writeUs}
             </a>
             <div className="mt-5">
-              <LanguageSwitcher variant="dark" />
+              <LanguageSwitcher />
             </div>
           </div>
         </div>
 
         <div className="gold-rule mt-12" />
-        <div className="mt-6 flex flex-col gap-3 text-[13px] text-white/70 sm:flex-row sm:justify-between">
+        <div className="mt-6 flex flex-col gap-3 text-[13px] text-ink/55 sm:flex-row sm:justify-between">
           <p>© 2026 {company.name}. {t.footer.rights}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link href="/mentions-legales" className="hover:text-gold">
+            <Link href="/mentions-legales" className="hover:text-ocean">
               {t.nav.legal}
             </Link>
             <a
               href="https://lordicon.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gold"
+              className="hover:text-ocean"
             >
               {t.ui.iconsCredit}
             </a>
